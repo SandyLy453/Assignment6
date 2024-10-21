@@ -1,0 +1,57 @@
+.container {
+  padding: 20px;
+  margin: 30px 100px;
+}
+
+.inputBox {
+  padding: 10px 0 10px 0;
+}
+
+.input {
+  height: 20px;
+  width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  font-family: monospace;
+  margin: 20px;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+.sm-btn{
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  font-family: monospace;
+  background-color: rgb(108, 135, 108);
+  color: aliceblue;
+  border: none;
+  border-radius: 10px;
+}
+
+.sm-btn:hover {
+  background-color: rgb(84, 103, 84);
+}
+
+.task {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.checkBox {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  margin: auto;
+}
+
+.checkBox:checked {
+  color: rgb(108, 135, 108);
+}

@@ -1,0 +1,102 @@
+.container {
+  padding: 20px;
+  margin: 30px 100px;
+}
+
+.title {
+  font-family: monospace;
+  font-size: 36px;
+}
+
+.inputBox {
+  padding: 10px 0 10px 0;
+}
+
+.input {
+  height: 20px;
+  width: 400px;
+  padding: 10px 10px 0 10px;
+  font-size: 16px;
+  font-family: monospace;
+  margin: 20px;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+.sm-btn{
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  font-family: monospace;
+  background-color: rgb(108, 135, 108);
+  color: aliceblue;
+  border: none;
+  border-radius: 10px;
+}
+
+.sm-btn:hover {
+  background-color: rgb(84, 103, 84);
+}
+
+.task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.checkBox {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  margin: 6px 0;
+}
+
+.checkBox:checked {
+  background-color: rgb(108, 135, 108);
+}
+
+.checkBox:checked::after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 0px;
+  left: 5px;
+}
+
+.content {
+  width: 540px;
+  display: flex;
+  word-wrap: normal;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+.task-delete {
+  height: 30px;
+  padding: 10px;
+  align-items: center;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-family: monospace;
+  background-color: rgb(108, 135, 108);
+  color: aliceblue;
+  border: none;
+  border-radius: 10px;
+}
+
+.task-delete:hover {
+  background-color: rgb(84, 103, 84);
+}

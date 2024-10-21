@@ -1,0 +1,25 @@
+.container {
+  padding: 20px;
+  margin: 30px 100px;
+}
+
+.inputBox {
+  padding: 10px 0 10px 0;
+}
+
+.input {
+  height: 20px;
+  padding: 10px;
+  font-size: 16px;
+  font-family: monospace;
+  margin: 20px;
+}
+
+.sm-btn{
+  height: 400px;
+  padding: 10px;
+  font-size: 16px;
+  font-family: monospace;
+}
+
+
