@@ -9,8 +9,8 @@ export default function Task({ task, toggleComplete, removeTask }) {
             id="checkbox"
             type="checkbox"
             checked={task.completed}
-            disabled={checked} // Disable if task is completed
             onChange={toggleComplete}
+            disabled={task.completed} // disabled when completed
           />
         </label>
         <span className="task-name" style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>{task.name}</span>
