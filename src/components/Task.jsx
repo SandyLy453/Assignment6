@@ -9,6 +9,7 @@ export default function Task({ task, toggleComplete, removeTask }) {
             id="checkbox"
             type="checkbox"
             checked={task.completed}
+            disabled={checked} // Disable if task is completed
             onChange={toggleComplete}
           />
         </label>
