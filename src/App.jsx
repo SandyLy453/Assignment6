@@ -18,6 +18,15 @@ function App() {
     if (filter === "pending") return !task.completed;
     return true; // show all tasks if return is true (all selected)
   });
+
+  const toggleTaskCompletion = (id) => {
+    setTasks(tasks.map(task => 
+      task.id === id ? { ...task, completed: !task.completed } : task
+    ));
+  };
+
+
+  
   
   const addTask = (task) => {
     setTasks([...tasks, { id: tasks.length, name: task, completed: false }]); // Adds task incomplete by default
@@ -62,12 +71,13 @@ function App() {
             </button>
           </div>
           
-          {tasks.map((task) => (
+          {filteredTask.map((task) => (
             <Task 
               key={task.id} 
               task={task}
               toggleComplete={() => toggleComplete(task.id)} 
               removeTask={() => removeTask(task.id)}
+              onToggle={() => toggleTaskCompletion(task.id)}
             />
           ))}
         </div>
