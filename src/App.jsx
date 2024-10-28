@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './index.css';
 import Task from './components/Task';
 import TaskForm from './components/TaskForm';
 
