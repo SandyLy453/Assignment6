@@ -87,17 +87,17 @@
   margin: 1em 0;
 }
 
-.btn-filters button {
+.filter-btn {
   border: 1px solid grey;
   border-radius: 10px;
 }
 
-.btn-filters button:hover {
+.filter-btn:hover {
   background-color: black;
   color: white;
 }
 
-.btn-filters button:focus {
+.filter-btn:focus {
   background-color: pink;
   color: black;
 }
