@@ -42,9 +42,24 @@ function App() {
           </h2>
 
           <div className="btn-filters">
-            <button onClick={() => setFilter("all")}>All</button>
-            <button onClick={() => setFilter("completed")}>Completed</button>
-            <button onClick={() => setFilter("pending")}>Pending</button>
+            <button 
+              onClick={() => setFilter('all')}
+              className="filter-btn"
+            >
+              All
+            </button>
+            <button 
+              onClick={() => setFilter('pending')}
+              className="filter-btn"
+            >
+              Pending
+            </button>
+            <button 
+              onClick={() => setFilter('completed')}
+              className="filter-btn"
+            >
+              Completed
+            </button>
           </div>
           
           {tasks.map((task) => (
