@@ -35,13 +35,6 @@ function App() {
     return true; // show all tasks if return is true (all selected)
   });
 
-  const toggleTaskCompletion = (id) => {
-    setTasks(tasks.map(task => 
-      task.id === id ? { ...task, completed: !task.completed } : task
-    ));
-  };
-  // For the task with the matching id, we update its completed property to the opposite of its current value.
-
   return (
     <>
       <div className="main">
@@ -58,14 +51,17 @@ function App() {
           <h2 className="counting">
             You have {tasks.filter(task => !task.completed).length} tasks remaining
           </h2>
-          {filteredTask.map((task) => (
-            <Task 
-              key={task.id} 
-              task={task}
-              toggleComplete={() => toggleComplete(task.id)} 
-              removeTask={() => removeTask(task.id)}
-              onToggle={() => toggleTaskCompletion(task.id)}
+          <div>
+          {filteredTasks.map((task) => (
+            <Task
+              key={task.name}
+              name={task.name}
+              checked={task.checked}
+              toggleTaskStatus={toggleComplete}
+              removeTask={removeTask}
             />
+          ))}
+        </div>
           ))}
         </div>
       </div>
