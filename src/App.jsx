@@ -23,12 +23,10 @@ function App() {
     setTasks(tasks.filter(task => task.id !== taskId));
   };
 
-  const remainingTask = tasks.filter(task => !task.completed).length;
-
   // Adding filter
   const [filter, setFilter] = useState("all"); // by default, all tasks will be displayed 
 
-  const filteredTask = tasks.filter(task => {
+  const filteredTasks = tasks.filter(task => {
     if (filter === "completed") return task.completed;
     if (filter === "pending") return !task.completed;
     return true; // show all tasks if return is true (all selected)
@@ -38,29 +36,28 @@ function App() {
     <>
       <div className="main">
         <h1 className="header">Daily Planner</h1>
+        <TaskForm addTask={addTask} />
+
+        <div className="btn-filters">
+          <button onClick={() => setFilter("all")}>All</button>
+          <button onClick={() => setFilter("completed")}>Completed</button>
+          <button onClick={() => setFilter("pending")}>Pending</button>
+        </div>
+
+        <h2 className="counting">
+          You have {tasks.filter(task => !task.completed).length} tasks remaining
+        </h2>
+
         <div>
-          <TaskForm addTask={addTask} />
-
-          <div className="btn-filters">
-            <button onClick={() => setFilter("all")}>All</button>
-            <button onClick={() => setFilter("completed")}>Completed</button>
-            <button onClick={() => setFilter("pending")}>Pending</button>
-          </div>
-
-          <h2 className="counting">
-            You have {tasks.filter(task => !task.completed).length} tasks remaining
-          </h2>
-          <div>
           {filteredTasks.map((task) => (
             <Task
-              key={task.name}
+              key={task.id}
+              id={task.id}
               name={task.name}
-              checked={task.checked}
+              completed={task.completed}
               toggleTaskStatus={toggleComplete}
               removeTask={removeTask}
             />
-          ))}
-        </div>
           ))}
         </div>
       </div>
@@ -69,5 +66,4 @@ function App() {
 }
 
 export default App;
-
 
